@@ -81,8 +81,7 @@ This pipeline consumes artifacts from the CI pipeline:
    - Successful production deployment view.  
 
    Example placeholders:  
-   - ![Staging Deployment](./screenshots/staging-deployment.png)  
-   - ![Production Deployment](./screenshots/production-deployment.png)  
+   - ![Staging & Production Deployment](./screenshots/staging-production-deployment.png)   
 
 3. **Namespaces**  
    - Staging: `staging`  
