@@ -90,6 +90,15 @@ This pipeline consumes artifacts from the CI pipeline:
 
 ---
 
+## Logs
+
+- The complete **deployment logs** are available in this repository.  
+- File: **`deployment-logs.txt`** or similar.  
+- Repo URL (to be updated by you):  
+  👉 [View Deployment Logs](YOUR_REPO_URL_HERE)  
+
+---
+
 ## How to Run the Pipeline
 
 1. Ensure CI pipeline (`Technical Assessment - ABB`) completes successfully and publishes artifacts.  
