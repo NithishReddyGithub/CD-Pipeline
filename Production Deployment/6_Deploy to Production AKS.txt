@@ -1,0 +1,167 @@
+2025-08-16T14:16:32.5328533Z ##[section]Starting: Deploy to Production AKS
+2025-08-16T14:16:32.5335892Z ==============================================================================
+2025-08-16T14:16:32.5336036Z Task         : Kubectl
+2025-08-16T14:16:32.5336100Z Description  : Deploy, configure, update a Kubernetes cluster in Azure Container Service by running kubectl commands
+2025-08-16T14:16:32.5336246Z Version      : 1.259.3
+2025-08-16T14:16:32.5336310Z Author       : Microsoft Corporation
+2025-08-16T14:16:32.5336403Z Help         : https://aka.ms/azpipes-kubectl-tsg
+2025-08-16T14:16:32.5336481Z ==============================================================================
+2025-08-16T14:16:33.8123477Z Prepending PATH environment variable with directory: /usr/bin
+2025-08-16T14:16:33.9759900Z ==============================================================================
+2025-08-16T14:16:33.9760176Z 			Kubectl Client Version: v1.33.3
+2025-08-16T14:16:33.9760357Z 			Kubectl Server Version: v1.32.6
+2025-08-16T14:16:33.9760959Z ==============================================================================
+2025-08-16T14:16:34.0219647Z [command]/usr/bin/kubectl apply -n production -f /home/nithish/myagent/3/s/manifests/production-deployment.yaml -o json
+2025-08-16T14:16:34.4603154Z {
+2025-08-16T14:16:34.4603376Z     "kind": "List",
+2025-08-16T14:16:34.4603549Z     "apiVersion": "v1",
+2025-08-16T14:16:34.4603728Z     "metadata": {},
+2025-08-16T14:16:34.4603876Z     "items": [
+2025-08-16T14:16:34.4604018Z         {
+2025-08-16T14:16:34.4604169Z             "apiVersion": "apps/v1",
+2025-08-16T14:16:34.4604415Z             "kind": "Deployment",
+2025-08-16T14:16:34.4604574Z             "metadata": {
+2025-08-16T14:16:34.4604726Z                 "annotations": {
+2025-08-16T14:16:34.4604906Z                     "deployment.kubernetes.io/revision": "1",
+2025-08-16T14:16:34.4605487Z                     "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"name\":\"my-app\",\"namespace\":\"production\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"my-app\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"my-app\"}},\"spec\":{\"containers\":[{\"image\":\"nithishacrm3wx2.azurecr.io/my-app:v1\",\"imagePullPolicy\":\"IfNotPresent\",\"name\":\"my-app\",\"ports\":[{\"containerPort\":3000}]}],\"imagePullSecrets\":[{\"name\":\"acr-production\"}],\"tolerations\":[{\"effect\":\"NoSchedule\",\"key\":\"CriticalAddonsOnly\",\"operator\":\"Exists\"}]}}}}\n"
+2025-08-16T14:16:34.4606030Z                 },
+2025-08-16T14:16:34.4606208Z                 "creationTimestamp": "2025-08-16T14:13:06Z",
+2025-08-16T14:16:34.4606403Z                 "generation": 1,
+2025-08-16T14:16:34.4606562Z                 "name": "my-app",
+2025-08-16T14:16:34.4606738Z                 "namespace": "production",
+2025-08-16T14:16:34.4606908Z                 "resourceVersion": "900637",
+2025-08-16T14:16:34.4607091Z                 "uid": "416a4449-4f35-4129-85e5-abbb3b1c9e40"
+2025-08-16T14:16:34.4607263Z             },
+2025-08-16T14:16:34.4607404Z             "spec": {
+2025-08-16T14:16:34.4607568Z                 "progressDeadlineSeconds": 600,
+2025-08-16T14:16:34.4607736Z                 "replicas": 1,
+2025-08-16T14:16:34.4607903Z                 "revisionHistoryLimit": 10,
+2025-08-16T14:16:34.4608068Z                 "selector": {
+2025-08-16T14:16:34.4608223Z                     "matchLabels": {
+2025-08-16T14:16:34.4608398Z                         "app": "my-app"
+2025-08-16T14:16:34.4608559Z                     }
+2025-08-16T14:16:34.4608697Z                 },
+2025-08-16T14:16:34.4609240Z                 "strategy": {
+2025-08-16T14:16:34.4609405Z                     "rollingUpdate": {
+2025-08-16T14:16:34.4609571Z                         "maxSurge": "25%",
+2025-08-16T14:16:34.4609739Z                         "maxUnavailable": "25%"
+2025-08-16T14:16:34.4609891Z                     },
+2025-08-16T14:16:34.4610049Z                     "type": "RollingUpdate"
+2025-08-16T14:16:34.4610570Z                 },
+2025-08-16T14:16:34.4610880Z                 "template": {
+2025-08-16T14:16:34.4611027Z                     "metadata": {
+2025-08-16T14:16:34.4611190Z                         "creationTimestamp": null,
+2025-08-16T14:16:34.4611349Z                         "labels": {
+2025-08-16T14:16:34.4611516Z                             "app": "my-app"
+2025-08-16T14:16:34.4611661Z                         }
+2025-08-16T14:16:34.4611801Z                     },
+2025-08-16T14:16:34.4611942Z                     "spec": {
+2025-08-16T14:16:34.4612092Z                         "containers": [
+2025-08-16T14:16:34.4612233Z                             {
+2025-08-16T14:16:34.4612412Z                                 "image": "nithishacrm3wx2.azurecr.io/my-app:v1",
+2025-08-16T14:16:34.4612613Z                                 "imagePullPolicy": "IfNotPresent",
+2025-08-16T14:16:34.4612784Z                                 "name": "my-app",
+2025-08-16T14:16:34.4612938Z                                 "ports": [
+2025-08-16T14:16:34.4613088Z                                     {
+2025-08-16T14:16:34.4613244Z                                         "containerPort": 3000,
+2025-08-16T14:16:34.4613408Z                                         "protocol": "TCP"
+2025-08-16T14:16:34.4613569Z                                     }
+2025-08-16T14:16:34.4613705Z                                 ],
+2025-08-16T14:16:34.4613853Z                                 "resources": {},
+2025-08-16T14:16:34.4614033Z                                 "terminationMessagePath": "/dev/termination-log",
+2025-08-16T14:16:34.4614231Z                                 "terminationMessagePolicy": "File"
+2025-08-16T14:16:34.4614395Z                             }
+2025-08-16T14:16:34.4614532Z                         ],
+2025-08-16T14:16:34.4614687Z                         "dnsPolicy": "ClusterFirst",
+2025-08-16T14:16:34.4614856Z                         "imagePullSecrets": [
+2025-08-16T14:16:34.4615004Z                             {
+2025-08-16T14:16:34.4615159Z                                 "name": "acr-production"
+2025-08-16T14:16:34.4615328Z                             }
+2025-08-16T14:16:34.4615590Z                         ],
+2025-08-16T14:16:34.4615749Z                         "restartPolicy": "Always",
+2025-08-16T14:16:34.4615929Z                         "schedulerName": "default-scheduler",
+2025-08-16T14:16:34.4616104Z                         "securityContext": {},
+2025-08-16T14:16:34.4616277Z                         "terminationGracePeriodSeconds": 30,
+2025-08-16T14:16:34.4616450Z                         "tolerations": [
+2025-08-16T14:16:34.4616595Z                             {
+2025-08-16T14:16:34.4616752Z                                 "effect": "NoSchedule",
+2025-08-16T14:16:34.4616936Z                                 "key": "CriticalAddonsOnly",
+2025-08-16T14:16:34.4617104Z                                 "operator": "Exists"
+2025-08-16T14:16:34.4617249Z                             }
+2025-08-16T14:16:34.4617645Z                         ]
+2025-08-16T14:16:34.4617797Z                     }
+2025-08-16T14:16:34.4617940Z                 }
+2025-08-16T14:16:34.4618076Z             },
+2025-08-16T14:16:34.4618217Z             "status": {
+2025-08-16T14:16:34.4618373Z                 "availableReplicas": 1,
+2025-08-16T14:16:34.4618530Z                 "conditions": [
+2025-08-16T14:16:34.4618674Z                     {
+2025-08-16T14:16:34.4618848Z                         "lastTransitionTime": "2025-08-16T14:13:07Z",
+2025-08-16T14:16:34.4619053Z                         "lastUpdateTime": "2025-08-16T14:13:07Z",
+2025-08-16T14:16:34.4619271Z                         "message": "Deployment has minimum availability.",
+2025-08-16T14:16:34.4619465Z                         "reason": "MinimumReplicasAvailable",
+2025-08-16T14:16:34.4619635Z                         "status": "True",
+2025-08-16T14:16:34.4619793Z                         "type": "Available"
+2025-08-16T14:16:34.4619939Z                     },
+2025-08-16T14:16:34.4620073Z                     {
+2025-08-16T14:16:34.4620370Z                         "lastTransitionTime": "2025-08-16T14:13:06Z",
+2025-08-16T14:16:34.4620676Z                         "lastUpdateTime": "2025-08-16T14:13:07Z",
+2025-08-16T14:16:34.4620897Z                         "message": "ReplicaSet \"my-app-5fb7c8f69d\" has successfully progressed.",
+2025-08-16T14:16:34.4621109Z                         "reason": "NewReplicaSetAvailable",
+2025-08-16T14:16:34.4621281Z                         "status": "True",
+2025-08-16T14:16:34.4621443Z                         "type": "Progressing"
+2025-08-16T14:16:34.4621615Z                     }
+2025-08-16T14:16:34.4621753Z                 ],
+2025-08-16T14:16:34.4621911Z                 "observedGeneration": 1,
+2025-08-16T14:16:34.4622074Z                 "readyReplicas": 1,
+2025-08-16T14:16:34.4622233Z                 "replicas": 1,
+2025-08-16T14:16:34.4622394Z                 "updatedReplicas": 1
+2025-08-16T14:16:34.4622540Z             }
+2025-08-16T14:16:34.4622675Z         },
+2025-08-16T14:16:34.4622814Z         {
+2025-08-16T14:16:34.4622960Z             "apiVersion": "v1",
+2025-08-16T14:16:34.4623118Z             "kind": "Service",
+2025-08-16T14:16:34.4623273Z             "metadata": {
+2025-08-16T14:16:34.4623422Z                 "annotations": {
+2025-08-16T14:16:34.4623754Z                     "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"name\":\"my-app-service\",\"namespace\":\"production\"},\"spec\":{\"ports\":[{\"port\":80,\"targetPort\":3000}],\"selector\":{\"app\":\"my-app\"},\"type\":\"LoadBalancer\"}}\n"
+2025-08-16T14:16:34.4624094Z                 },
+2025-08-16T14:16:34.4624285Z                 "creationTimestamp": "2025-08-16T14:16:34Z",
+2025-08-16T14:16:34.4624470Z                 "name": "my-app-service",
+2025-08-16T14:16:34.4624643Z                 "namespace": "production",
+2025-08-16T14:16:34.4624817Z                 "resourceVersion": "901551",
+2025-08-16T14:16:34.4625031Z                 "uid": "a0d0caea-f6ac-41ec-9dc4-dcc66941f35f"
+2025-08-16T14:16:34.4625199Z             },
+2025-08-16T14:16:34.4625341Z             "spec": {
+2025-08-16T14:16:34.4625509Z                 "allocateLoadBalancerNodePorts": true,
+2025-08-16T14:16:34.4625687Z                 "clusterIP": "10.0.39.188",
+2025-08-16T14:16:34.4625860Z                 "clusterIPs": [
+2025-08-16T14:16:34.4626010Z                     "10.0.39.188"
+2025-08-16T14:16:34.4626150Z                 ],
+2025-08-16T14:16:34.4626309Z                 "externalTrafficPolicy": "Cluster",
+2025-08-16T14:16:34.4626487Z                 "internalTrafficPolicy": "Cluster",
+2025-08-16T14:16:34.4626652Z                 "ipFamilies": [
+2025-08-16T14:16:34.4626800Z                     "IPv4"
+2025-08-16T14:16:34.4626936Z                 ],
+2025-08-16T14:16:34.4627096Z                 "ipFamilyPolicy": "SingleStack",
+2025-08-16T14:16:34.4627258Z                 "ports": [
+2025-08-16T14:16:34.4627398Z                     {
+2025-08-16T14:16:34.4627546Z                         "nodePort": 31262,
+2025-08-16T14:16:34.4627702Z                         "port": 80,
+2025-08-16T14:16:34.4627873Z                         "protocol": "TCP",
+2025-08-16T14:16:34.4628031Z                         "targetPort": 3000
+2025-08-16T14:16:34.4628175Z                     }
+2025-08-16T14:16:34.4628310Z                 ],
+2025-08-16T14:16:34.4628454Z                 "selector": {
+2025-08-16T14:16:34.4628601Z                     "app": "my-app"
+2025-08-16T14:16:34.4628743Z                 },
+2025-08-16T14:16:34.4628900Z                 "sessionAffinity": "None",
+2025-08-16T14:16:34.4629065Z                 "type": "LoadBalancer"
+2025-08-16T14:16:34.4629213Z             },
+2025-08-16T14:16:34.4629355Z             "status": {
+2025-08-16T14:16:34.4629503Z                 "loadBalancer": {}
+2025-08-16T14:16:34.4629649Z             }
+2025-08-16T14:16:34.4629781Z         }
+2025-08-16T14:16:34.4629914Z     ]
+2025-08-16T14:16:34.4630061Z }
+2025-08-16T14:16:34.4630111Z 
+2025-08-16T14:16:34.7887103Z ##[section]Finishing: Deploy to Production AKS

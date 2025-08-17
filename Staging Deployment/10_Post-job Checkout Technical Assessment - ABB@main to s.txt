@@ -1,0 +1,13 @@
+2025-08-16T14:15:57.3386008Z ##[section]Starting: Checkout Technical Assessment - ABB@main to s
+2025-08-16T14:15:57.3389644Z ==============================================================================
+2025-08-16T14:15:57.3389803Z Task         : Get sources
+2025-08-16T14:15:57.3389882Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2025-08-16T14:15:57.3390001Z Version      : 1.0.0
+2025-08-16T14:15:57.3390081Z Author       : Microsoft
+2025-08-16T14:15:57.3390150Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2025-08-16T14:15:57.3390268Z ==============================================================================
+2025-08-16T14:15:57.6282749Z Cleaning any cached credential from repository: Technical Assessment - ABB (Git)
+2025-08-16T14:15:57.6411302Z ##[command]git version
+2025-08-16T14:15:57.6759982Z git version 2.25.1
+2025-08-16T14:15:57.6832411Z ##[command]git config --unset-all http.https://nithishp@dev.azure.com/nithishp/Technical%AZP2520Assessment%AZP2520-%AZP2520ABB/_git/Technical%AZP2520Assessment%AZP2520-%AZP2520ABB.extraheader
+2025-08-16T14:15:57.6962535Z ##[section]Finishing: Checkout Technical Assessment - ABB@main to s

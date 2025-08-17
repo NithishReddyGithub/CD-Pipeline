@@ -1,0 +1,344 @@
+2025-08-16T14:16:21.0606618Z ##[section]Starting: Production Deployment
+2025-08-16T14:16:21.1962006Z ##[section]Starting: Initialize job
+2025-08-16T14:16:21.1965071Z Agent name: 'nithish'
+2025-08-16T14:16:21.1965551Z Agent machine name: 'linux-vm'
+2025-08-16T14:16:21.1965802Z Current agent version: '4.260.0'
+2025-08-16T14:16:21.2924838Z Agent running as: 'nithish'
+2025-08-16T14:16:21.2970362Z Prepare build directory.
+2025-08-16T14:16:21.3269437Z Set build variables.
+2025-08-16T14:16:21.3286637Z Download all required tasks.
+2025-08-16T14:16:21.4147663Z Checking job knob settings.
+2025-08-16T14:16:21.4151107Z    Knob: DockerActionRetries = true Source: $(VSTSAGENT_DOCKER_ACTION_RETRIES) 
+2025-08-16T14:16:21.4152667Z    Knob: UseGitLongPaths = true Source: $(USE_GIT_LONG_PATHS) 
+2025-08-16T14:16:21.4154850Z    Knob: EnableIssueSourceValidation = true Source: $(ENABLE_ISSUE_SOURCE_VALIDATION) 
+2025-08-16T14:16:21.4155817Z    Knob: AgentEnablePipelineArtifactLargeChunkSize = true Source: $(AGENT_ENABLE_PIPELINEARTIFACT_LARGE_CHUNK_SIZE) 
+2025-08-16T14:16:21.4158584Z    Knob: ContinueAfterCancelProcessTreeKillAttempt = true Source: $(VSTSAGENT_CONTINUE_AFTER_CANCEL_PROCESSTREEKILL_ATTEMPT) 
+2025-08-16T14:16:21.4159398Z    Knob: ProcessHandlerSecureArguments = false Source: $(AZP_75787_ENABLE_NEW_LOGIC) 
+2025-08-16T14:16:21.4159942Z    Knob: ProcessHandlerSecureArguments = false Source: $(AZP_75787_ENABLE_NEW_LOGIC_LOG) 
+2025-08-16T14:16:21.4160467Z    Knob: ProcessHandlerTelemetry = true Source: $(AZP_75787_ENABLE_COLLECT) 
+2025-08-16T14:16:21.4161035Z    Knob: UseNewNodeHandlerTelemetry = True Source: $(DistributedTask.Agent.USENEWNODEHANDLERTELEMETRY) 
+2025-08-16T14:16:21.4161602Z    Knob: ProcessHandlerEnableNewLogic = true Source: $(AZP_75787_ENABLE_NEW_PH_LOGIC) 
+2025-08-16T14:16:21.4162418Z    Knob: EnableResourceMonitorDebugOutput = true Source: $(AZP_ENABLE_RESOURCE_MONITOR_DEBUG_OUTPUT) 
+2025-08-16T14:16:21.4163008Z    Knob: EnableResourceUtilizationWarnings = true Source: $(AZP_ENABLE_RESOURCE_UTILIZATION_WARNINGS) 
+2025-08-16T14:16:21.4163787Z    Knob: IgnoreVSTSTaskLib = true Source: $(AZP_AGENT_IGNORE_VSTSTASKLIB) 
+2025-08-16T14:16:21.4164344Z    Knob: FailJobWhenAgentDies = true Source: $(FAIL_JOB_WHEN_AGENT_DIES) 
+2025-08-16T14:16:21.4165021Z    Knob: CheckForTaskDeprecation = true Source: $(AZP_AGENT_CHECK_FOR_TASK_DEPRECATION) 
+2025-08-16T14:16:21.4165749Z    Knob: CheckIfTaskNodeRunnerIsDeprecated246 = True Source: $(DistributedTask.Agent.CheckIfTaskNodeRunnerIsDeprecated246) 
+2025-08-16T14:16:21.4166817Z    Knob: LogTaskNameInUserAgent = true Source: $(AZP_AGENT_LOG_TASKNAME_IN_USERAGENT) 
+2025-08-16T14:16:21.4167352Z    Knob: UseFetchFilterInCheckoutTask = true Source: $(AGENT_USE_FETCH_FILTER_IN_CHECKOUT_TASK) 
+2025-08-16T14:16:21.4168000Z    Knob: Rosetta2Warning = true Source: $(ROSETTA2_WARNING) 
+2025-08-16T14:16:21.4169516Z    Knob: UseSparseCheckoutInCheckoutTask = true Source: $(AGENT_USE_SPARSE_CHECKOUT_IN_CHECKOUT_TASK) 
+2025-08-16T14:16:21.4170521Z    Knob: AgentCDNConnectivityFailWarning = False Source: $(DistributedTask.Agent.AgentCDNConnectivityFailWarning) 
+2025-08-16T14:16:21.4170847Z Finished checking job knob settings.
+2025-08-16T14:16:21.4498264Z Start tracking orphan processes.
+2025-08-16T14:16:21.4642915Z ##[section]Finishing: Initialize job
+2025-08-16T14:16:21.4707496Z ##[section]Async Command Start: DetectDockerContainer
+2025-08-16T14:16:21.4708242Z ##[section]Async Command End: DetectDockerContainer
+2025-08-16T14:16:21.4709530Z ##[section]Async Command Start: DetectDockerContainer
+2025-08-16T14:16:21.4709913Z ##[section]Async Command End: DetectDockerContainer
+2025-08-16T14:16:21.4859143Z ##[section]Starting: Download
+2025-08-16T14:16:21.4963625Z ==============================================================================
+2025-08-16T14:16:21.4964420Z Task         : Download pipeline artifact
+2025-08-16T14:16:21.4964828Z Description  : Download a named artifact from a pipeline to a local path
+2025-08-16T14:16:21.4965030Z Version      : 1.230.0
+2025-08-16T14:16:21.4965294Z Author       : Microsoft Corporation
+2025-08-16T14:16:21.4965989Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/download-pipeline-artifact
+2025-08-16T14:16:21.4966199Z ==============================================================================
+2025-08-16T14:16:21.8434277Z Download from the specified build: #29
+2025-08-16T14:16:21.8583225Z Download artifact to: /home/nithish/myagent/3/ci/drop
+2025-08-16T14:16:22.2739295Z Using default max parallelism.
+2025-08-16T14:16:22.2755759Z Max dedup parallelism: 192
+2025-08-16T14:16:22.2756629Z DomainId: 0
+2025-08-16T14:16:22.3636428Z ApplicationInsightsTelemetrySender will correlate events with X-TFS-Session 50ece42b-7f5e-452f-a711-f0eaae8440b1
+2025-08-16T14:16:22.3741161Z Hashtype: Dedup1024K
+2025-08-16T14:16:22.4041879Z DedupManifestArtifactClient will correlate http requests with X-TFS-Session 50ece42b-7f5e-452f-a711-f0eaae8440b1
+2025-08-16T14:16:22.4042800Z Minimatch patterns: [**]
+2025-08-16T14:16:22.5287133Z Filtered 1 files from the Minimatch filters supplied.
+2025-08-16T14:16:22.5333701Z Downloaded 0.0 MB out of 0.0 MB (0%).
+2025-08-16T14:16:22.6076337Z Downloaded 0.0 MB out of 0.0 MB (100%).
+2025-08-16T14:16:22.6076728Z 
+2025-08-16T14:16:22.6077274Z Download statistics:
+2025-08-16T14:16:22.6077890Z Total Content: 0.0 MB
+2025-08-16T14:16:22.6078554Z Physical Content Downloaded: 0.0 MB
+2025-08-16T14:16:22.6079186Z Compression Saved: 0.0 MB
+2025-08-16T14:16:22.6079844Z Local Caching Saved: 0.0 MB
+2025-08-16T14:16:22.6080454Z Chunks Downloaded: 1
+2025-08-16T14:16:22.6081031Z Nodes Downloaded: 0
+2025-08-16T14:16:22.6081327Z 
+2025-08-16T14:16:22.6099464Z Download completed.
+2025-08-16T14:16:23.5065473Z ApplicationInsightsTelemetrySender correlated 2 events with X-TFS-Session 50ece42b-7f5e-452f-a711-f0eaae8440b1
+2025-08-16T14:16:23.5085975Z Downloading artifact finished.
+2025-08-16T14:16:23.5282629Z ##[section]Finishing: Download
+2025-08-16T14:16:23.5360965Z ##[section]Starting: Authenticate with AKS
+2025-08-16T14:16:23.5379389Z ==============================================================================
+2025-08-16T14:16:23.5379915Z Task         : Azure CLI
+2025-08-16T14:16:23.5380171Z Description  : Run Azure CLI commands against an Azure subscription in a PowerShell Core/Shell script when running on Linux agent or PowerShell/PowerShell Core/Batch script when running on Windows agent.
+2025-08-16T14:16:23.5380896Z Version      : 2.259.1
+2025-08-16T14:16:23.5381185Z Author       : Microsoft Corporation
+2025-08-16T14:16:23.5381512Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-cli
+2025-08-16T14:16:23.5381905Z ==============================================================================
+2025-08-16T14:16:23.9062790Z [command]/usr/bin/az --version
+2025-08-16T14:16:24.9191415Z WARNING: You have 2 update(s) available. Consider updating your CLI installation with 'az upgrade'
+2025-08-16T14:16:24.9192068Z azure-cli                         2.72.0 *
+2025-08-16T14:16:24.9192164Z 
+2025-08-16T14:16:24.9192387Z core                              2.72.0 *
+2025-08-16T14:16:24.9192642Z telemetry                          1.1.0
+2025-08-16T14:16:24.9192743Z 
+2025-08-16T14:16:24.9192962Z Dependencies:
+2025-08-16T14:16:24.9193233Z msal                              1.32.3
+2025-08-16T14:16:24.9193477Z azure-mgmt-resource               23.1.1
+2025-08-16T14:16:24.9193585Z 
+2025-08-16T14:16:24.9193806Z Python location '/opt/az/bin/python3'
+2025-08-16T14:16:24.9194080Z Config directory '/home/nithish/.azure'
+2025-08-16T14:16:24.9194360Z Extensions directory '/home/nithish/.azure/cliextensions'
+2025-08-16T14:16:24.9194469Z 
+2025-08-16T14:16:24.9194896Z Python (Linux) 3.12.8 (main, Apr 28 2025, 09:24:09) [GCC 9.4.0]
+2025-08-16T14:16:24.9195071Z 
+2025-08-16T14:16:24.9195296Z Legal docs and information: aka.ms/AzureCliLegal
+2025-08-16T14:16:24.9195422Z 
+2025-08-16T14:16:24.9195503Z 
+2025-08-16T14:16:24.9198454Z Setting AZURE_CONFIG_DIR env variable to: /home/nithish/myagent/_temp/.azclitask
+2025-08-16T14:16:24.9199450Z Setting active cloud to: AzureCloud
+2025-08-16T14:16:24.9207004Z [command]/usr/bin/az cloud set -n AzureCloud
+2025-08-16T14:16:28.0533784Z [command]/usr/bin/az login --service-principal -u *** --tenant 43479cab-e51a-4a2a-8e3f-f636af78c0ac --allow-no-subscriptions --federated-token ***
+2025-08-16T14:16:29.2103595Z [
+2025-08-16T14:16:29.2104672Z   {
+2025-08-16T14:16:29.2104991Z     "cloudName": "AzureCloud",
+2025-08-16T14:16:29.2105290Z     "homeTenantId": "43479cab-e51a-4a2a-8e3f-f636af78c0ac",
+2025-08-16T14:16:29.2105590Z     "id": "c4c0a9c0-532c-47f2-ba91-33d673835ff4",
+2025-08-16T14:16:29.2105880Z     "isDefault": true,
+2025-08-16T14:16:29.2106180Z     "managedByTenants": [],
+2025-08-16T14:16:29.2106460Z     "name": "Azure subscription 1",
+2025-08-16T14:16:29.2106711Z     "state": "Enabled",
+2025-08-16T14:16:29.2106995Z     "tenantId": "43479cab-e51a-4a2a-8e3f-f636af78c0ac",
+2025-08-16T14:16:29.2107408Z     "user": {
+2025-08-16T14:16:29.2108021Z       "name": "***",
+2025-08-16T14:16:29.2108281Z       "type": "servicePrincipal"
+2025-08-16T14:16:29.2108516Z     }
+2025-08-16T14:16:29.2108749Z   }
+2025-08-16T14:16:29.2108960Z ]
+2025-08-16T14:16:29.2114478Z [command]/usr/bin/az account set --subscription c4c0a9c0-532c-47f2-ba91-33d673835ff4
+2025-08-16T14:16:29.6636361Z [command]/usr/bin/bash /home/nithish/myagent/_temp/azureclitaskscript1755353783901.sh
+2025-08-16T14:16:30.8772928Z WARNING: Merged "nithish-aks-aks" as current context in /home/nithish/.kube/config
+2025-08-16T14:16:31.0498580Z 
+2025-08-16T14:16:31.0516033Z [command]/usr/bin/az account clear
+2025-08-16T14:16:31.8375743Z ##[section]Finishing: Authenticate with AKS
+2025-08-16T14:16:31.8398663Z ##[section]Starting: Create namespace if not exists
+2025-08-16T14:16:31.8404420Z ==============================================================================
+2025-08-16T14:16:31.8404540Z Task         : Command line
+2025-08-16T14:16:31.8404627Z Description  : Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
+2025-08-16T14:16:31.8404736Z Version      : 2.250.1
+2025-08-16T14:16:31.8404807Z Author       : Microsoft Corporation
+2025-08-16T14:16:31.8404913Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/command-line
+2025-08-16T14:16:31.8405016Z ==============================================================================
+2025-08-16T14:16:32.1179993Z Generating script.
+2025-08-16T14:16:32.1186665Z Script contents:
+2025-08-16T14:16:32.1186873Z kubectl get ns production || kubectl create ns production
+2025-08-16T14:16:32.1187108Z ========================== Starting Command Output ===========================
+2025-08-16T14:16:32.1240170Z [command]/usr/bin/bash --noprofile --norc /home/nithish/myagent/_temp/8825647e-5041-4ba5-aa51-5096424406e3.sh
+2025-08-16T14:16:32.3303996Z NAME         STATUS   AGE
+2025-08-16T14:16:32.3306010Z production   Active   6m24s
+2025-08-16T14:16:32.3339279Z 
+2025-08-16T14:16:32.3386999Z ##[section]Finishing: Create namespace if not exists
+2025-08-16T14:16:32.3407734Z ##[section]Starting: Apply ConfigMap
+2025-08-16T14:16:32.3413031Z ==============================================================================
+2025-08-16T14:16:32.3413170Z Task         : Command line
+2025-08-16T14:16:32.3413252Z Description  : Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
+2025-08-16T14:16:32.3413362Z Version      : 2.250.1
+2025-08-16T14:16:32.3413443Z Author       : Microsoft Corporation
+2025-08-16T14:16:32.3413521Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/command-line
+2025-08-16T14:16:32.3413636Z ==============================================================================
+2025-08-16T14:16:32.5135484Z Generating script.
+2025-08-16T14:16:32.5147984Z ========================== Starting Command Output ===========================
+2025-08-16T14:16:32.5173070Z [command]/usr/bin/bash --noprofile --norc /home/nithish/myagent/_temp/3c48de8d-84a7-42db-8fdc-125137ad1b5f.sh
+2025-08-16T14:16:32.5236600Z No staging config files found, skipping ConfigMap.
+2025-08-16T14:16:32.5244865Z 
+2025-08-16T14:16:32.5307656Z ##[section]Finishing: Apply ConfigMap
+2025-08-16T14:16:32.5328542Z ##[section]Starting: Deploy to Production AKS
+2025-08-16T14:16:32.5335921Z ==============================================================================
+2025-08-16T14:16:32.5336040Z Task         : Kubectl
+2025-08-16T14:16:32.5336104Z Description  : Deploy, configure, update a Kubernetes cluster in Azure Container Service by running kubectl commands
+2025-08-16T14:16:32.5336249Z Version      : 1.259.3
+2025-08-16T14:16:32.5336314Z Author       : Microsoft Corporation
+2025-08-16T14:16:32.5336407Z Help         : https://aka.ms/azpipes-kubectl-tsg
+2025-08-16T14:16:32.5336485Z ==============================================================================
+2025-08-16T14:16:33.8123514Z Prepending PATH environment variable with directory: /usr/bin
+2025-08-16T14:16:33.9759931Z ==============================================================================
+2025-08-16T14:16:33.9760179Z 			Kubectl Client Version: v1.33.3
+2025-08-16T14:16:33.9760360Z 			Kubectl Server Version: v1.32.6
+2025-08-16T14:16:33.9761027Z ==============================================================================
+2025-08-16T14:16:34.0219691Z [command]/usr/bin/kubectl apply -n production -f /home/nithish/myagent/3/s/manifests/production-deployment.yaml -o json
+2025-08-16T14:16:34.4603194Z {
+2025-08-16T14:16:34.4603381Z     "kind": "List",
+2025-08-16T14:16:34.4603552Z     "apiVersion": "v1",
+2025-08-16T14:16:34.4603731Z     "metadata": {},
+2025-08-16T14:16:34.4603879Z     "items": [
+2025-08-16T14:16:34.4604020Z         {
+2025-08-16T14:16:34.4604185Z             "apiVersion": "apps/v1",
+2025-08-16T14:16:34.4604421Z             "kind": "Deployment",
+2025-08-16T14:16:34.4604577Z             "metadata": {
+2025-08-16T14:16:34.4604733Z                 "annotations": {
+2025-08-16T14:16:34.4604909Z                     "deployment.kubernetes.io/revision": "1",
+2025-08-16T14:16:34.4605525Z                     "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"name\":\"my-app\",\"namespace\":\"production\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"my-app\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"my-app\"}},\"spec\":{\"containers\":[{\"image\":\"nithishacrm3wx2.azurecr.io/my-app:v1\",\"imagePullPolicy\":\"IfNotPresent\",\"name\":\"my-app\",\"ports\":[{\"containerPort\":3000}]}],\"imagePullSecrets\":[{\"name\":\"acr-production\"}],\"tolerations\":[{\"effect\":\"NoSchedule\",\"key\":\"CriticalAddonsOnly\",\"operator\":\"Exists\"}]}}}}\n"
+2025-08-16T14:16:34.4606032Z                 },
+2025-08-16T14:16:34.4606225Z                 "creationTimestamp": "2025-08-16T14:13:06Z",
+2025-08-16T14:16:34.4606406Z                 "generation": 1,
+2025-08-16T14:16:34.4606565Z                 "name": "my-app",
+2025-08-16T14:16:34.4606740Z                 "namespace": "production",
+2025-08-16T14:16:34.4606911Z                 "resourceVersion": "900637",
+2025-08-16T14:16:34.4607098Z                 "uid": "416a4449-4f35-4129-85e5-abbb3b1c9e40"
+2025-08-16T14:16:34.4607266Z             },
+2025-08-16T14:16:34.4607406Z             "spec": {
+2025-08-16T14:16:34.4607571Z                 "progressDeadlineSeconds": 600,
+2025-08-16T14:16:34.4607738Z                 "replicas": 1,
+2025-08-16T14:16:34.4607906Z                 "revisionHistoryLimit": 10,
+2025-08-16T14:16:34.4608071Z                 "selector": {
+2025-08-16T14:16:34.4608226Z                     "matchLabels": {
+2025-08-16T14:16:34.4608419Z                         "app": "my-app"
+2025-08-16T14:16:34.4608562Z                     }
+2025-08-16T14:16:34.4608700Z                 },
+2025-08-16T14:16:34.4609244Z                 "strategy": {
+2025-08-16T14:16:34.4609407Z                     "rollingUpdate": {
+2025-08-16T14:16:34.4609573Z                         "maxSurge": "25%",
+2025-08-16T14:16:34.4609742Z                         "maxUnavailable": "25%"
+2025-08-16T14:16:34.4609894Z                     },
+2025-08-16T14:16:34.4610051Z                     "type": "RollingUpdate"
+2025-08-16T14:16:34.4610730Z                 },
+2025-08-16T14:16:34.4610883Z                 "template": {
+2025-08-16T14:16:34.4611030Z                     "metadata": {
+2025-08-16T14:16:34.4611192Z                         "creationTimestamp": null,
+2025-08-16T14:16:34.4611351Z                         "labels": {
+2025-08-16T14:16:34.4611518Z                             "app": "my-app"
+2025-08-16T14:16:34.4611663Z                         }
+2025-08-16T14:16:34.4611803Z                     },
+2025-08-16T14:16:34.4611945Z                     "spec": {
+2025-08-16T14:16:34.4612094Z                         "containers": [
+2025-08-16T14:16:34.4612235Z                             {
+2025-08-16T14:16:34.4612415Z                                 "image": "nithishacrm3wx2.azurecr.io/my-app:v1",
+2025-08-16T14:16:34.4612616Z                                 "imagePullPolicy": "IfNotPresent",
+2025-08-16T14:16:34.4612787Z                                 "name": "my-app",
+2025-08-16T14:16:34.4612940Z                                 "ports": [
+2025-08-16T14:16:34.4613092Z                                     {
+2025-08-16T14:16:34.4613246Z                                         "containerPort": 3000,
+2025-08-16T14:16:34.4613423Z                                         "protocol": "TCP"
+2025-08-16T14:16:34.4613571Z                                     }
+2025-08-16T14:16:34.4613707Z                                 ],
+2025-08-16T14:16:34.4613856Z                                 "resources": {},
+2025-08-16T14:16:34.4614036Z                                 "terminationMessagePath": "/dev/termination-log",
+2025-08-16T14:16:34.4614234Z                                 "terminationMessagePolicy": "File"
+2025-08-16T14:16:34.4614397Z                             }
+2025-08-16T14:16:34.4614534Z                         ],
+2025-08-16T14:16:34.4614690Z                         "dnsPolicy": "ClusterFirst",
+2025-08-16T14:16:34.4614859Z                         "imagePullSecrets": [
+2025-08-16T14:16:34.4615006Z                             {
+2025-08-16T14:16:34.4615164Z                                 "name": "acr-production"
+2025-08-16T14:16:34.4615331Z                             }
+2025-08-16T14:16:34.4615592Z                         ],
+2025-08-16T14:16:34.4615752Z                         "restartPolicy": "Always",
+2025-08-16T14:16:34.4615931Z                         "schedulerName": "default-scheduler",
+2025-08-16T14:16:34.4616106Z                         "securityContext": {},
+2025-08-16T14:16:34.4616279Z                         "terminationGracePeriodSeconds": 30,
+2025-08-16T14:16:34.4616452Z                         "tolerations": [
+2025-08-16T14:16:34.4616598Z                             {
+2025-08-16T14:16:34.4616754Z                                 "effect": "NoSchedule",
+2025-08-16T14:16:34.4616938Z                                 "key": "CriticalAddonsOnly",
+2025-08-16T14:16:34.4617106Z                                 "operator": "Exists"
+2025-08-16T14:16:34.4617252Z                             }
+2025-08-16T14:16:34.4617648Z                         ]
+2025-08-16T14:16:34.4617802Z                     }
+2025-08-16T14:16:34.4617943Z                 }
+2025-08-16T14:16:34.4618078Z             },
+2025-08-16T14:16:34.4618219Z             "status": {
+2025-08-16T14:16:34.4618376Z                 "availableReplicas": 1,
+2025-08-16T14:16:34.4618533Z                 "conditions": [
+2025-08-16T14:16:34.4618676Z                     {
+2025-08-16T14:16:34.4618851Z                         "lastTransitionTime": "2025-08-16T14:13:07Z",
+2025-08-16T14:16:34.4619055Z                         "lastUpdateTime": "2025-08-16T14:13:07Z",
+2025-08-16T14:16:34.4619274Z                         "message": "Deployment has minimum availability.",
+2025-08-16T14:16:34.4619468Z                         "reason": "MinimumReplicasAvailable",
+2025-08-16T14:16:34.4619637Z                         "status": "True",
+2025-08-16T14:16:34.4619795Z                         "type": "Available"
+2025-08-16T14:16:34.4619941Z                     },
+2025-08-16T14:16:34.4620076Z                     {
+2025-08-16T14:16:34.4620444Z                         "lastTransitionTime": "2025-08-16T14:13:06Z",
+2025-08-16T14:16:34.4620678Z                         "lastUpdateTime": "2025-08-16T14:13:07Z",
+2025-08-16T14:16:34.4620901Z                         "message": "ReplicaSet \"my-app-5fb7c8f69d\" has successfully progressed.",
+2025-08-16T14:16:34.4621112Z                         "reason": "NewReplicaSetAvailable",
+2025-08-16T14:16:34.4621284Z                         "status": "True",
+2025-08-16T14:16:34.4621468Z                         "type": "Progressing"
+2025-08-16T14:16:34.4621617Z                     }
+2025-08-16T14:16:34.4621756Z                 ],
+2025-08-16T14:16:34.4621913Z                 "observedGeneration": 1,
+2025-08-16T14:16:34.4622077Z                 "readyReplicas": 1,
+2025-08-16T14:16:34.4622235Z                 "replicas": 1,
+2025-08-16T14:16:34.4622396Z                 "updatedReplicas": 1
+2025-08-16T14:16:34.4622543Z             }
+2025-08-16T14:16:34.4622677Z         },
+2025-08-16T14:16:34.4622816Z         {
+2025-08-16T14:16:34.4622964Z             "apiVersion": "v1",
+2025-08-16T14:16:34.4623120Z             "kind": "Service",
+2025-08-16T14:16:34.4623275Z             "metadata": {
+2025-08-16T14:16:34.4623425Z                 "annotations": {
+2025-08-16T14:16:34.4623772Z                     "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"v1\",\"kind\":\"Service\",\"metadata\":{\"annotations\":{},\"name\":\"my-app-service\",\"namespace\":\"production\"},\"spec\":{\"ports\":[{\"port\":80,\"targetPort\":3000}],\"selector\":{\"app\":\"my-app\"},\"type\":\"LoadBalancer\"}}\n"
+2025-08-16T14:16:34.4624097Z                 },
+2025-08-16T14:16:34.4624288Z                 "creationTimestamp": "2025-08-16T14:16:34Z",
+2025-08-16T14:16:34.4624472Z                 "name": "my-app-service",
+2025-08-16T14:16:34.4624645Z                 "namespace": "production",
+2025-08-16T14:16:34.4624820Z                 "resourceVersion": "901551",
+2025-08-16T14:16:34.4625036Z                 "uid": "a0d0caea-f6ac-41ec-9dc4-dcc66941f35f"
+2025-08-16T14:16:34.4625201Z             },
+2025-08-16T14:16:34.4625343Z             "spec": {
+2025-08-16T14:16:34.4625512Z                 "allocateLoadBalancerNodePorts": true,
+2025-08-16T14:16:34.4625689Z                 "clusterIP": "10.0.39.188",
+2025-08-16T14:16:34.4625863Z                 "clusterIPs": [
+2025-08-16T14:16:34.4626012Z                     "10.0.39.188"
+2025-08-16T14:16:34.4626152Z                 ],
+2025-08-16T14:16:34.4626311Z                 "externalTrafficPolicy": "Cluster",
+2025-08-16T14:16:34.4626490Z                 "internalTrafficPolicy": "Cluster",
+2025-08-16T14:16:34.4626654Z                 "ipFamilies": [
+2025-08-16T14:16:34.4626802Z                     "IPv4"
+2025-08-16T14:16:34.4626938Z                 ],
+2025-08-16T14:16:34.4627099Z                 "ipFamilyPolicy": "SingleStack",
+2025-08-16T14:16:34.4627260Z                 "ports": [
+2025-08-16T14:16:34.4627400Z                     {
+2025-08-16T14:16:34.4627548Z                         "nodePort": 31262,
+2025-08-16T14:16:34.4627707Z                         "port": 80,
+2025-08-16T14:16:34.4627876Z                         "protocol": "TCP",
+2025-08-16T14:16:34.4628033Z                         "targetPort": 3000
+2025-08-16T14:16:34.4628177Z                     }
+2025-08-16T14:16:34.4628313Z                 ],
+2025-08-16T14:16:34.4628457Z                 "selector": {
+2025-08-16T14:16:34.4628604Z                     "app": "my-app"
+2025-08-16T14:16:34.4628745Z                 },
+2025-08-16T14:16:34.4628902Z                 "sessionAffinity": "None",
+2025-08-16T14:16:34.4629067Z                 "type": "LoadBalancer"
+2025-08-16T14:16:34.4629216Z             },
+2025-08-16T14:16:34.4629357Z             "status": {
+2025-08-16T14:16:34.4629506Z                 "loadBalancer": {}
+2025-08-16T14:16:34.4629651Z             }
+2025-08-16T14:16:34.4629784Z         }
+2025-08-16T14:16:34.4629934Z     ]
+2025-08-16T14:16:34.4630064Z }
+2025-08-16T14:16:34.4630115Z 
+2025-08-16T14:16:34.7887119Z ##[section]Finishing: Deploy to Production AKS
+2025-08-16T14:16:34.7908573Z ##[section]Starting: Verify Rollout
+2025-08-16T14:16:34.7914005Z ==============================================================================
+2025-08-16T14:16:34.7914161Z Task         : Command line
+2025-08-16T14:16:34.7914233Z Description  : Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
+2025-08-16T14:16:34.7914356Z Version      : 2.250.1
+2025-08-16T14:16:34.7914424Z Author       : Microsoft Corporation
+2025-08-16T14:16:34.7914513Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/command-line
+2025-08-16T14:16:34.7914615Z ==============================================================================
+2025-08-16T14:16:34.9701826Z Generating script.
+2025-08-16T14:16:34.9712023Z Script contents:
+2025-08-16T14:16:34.9712223Z kubectl -n production rollout status deployment/my-app --timeout=60s
+2025-08-16T14:16:34.9712488Z ========================== Starting Command Output ===========================
+2025-08-16T14:16:34.9728874Z [command]/usr/bin/bash --noprofile --norc /home/nithish/myagent/_temp/f1d41d9b-7963-428d-adb3-c90007f74bf5.sh
+2025-08-16T14:16:35.1685271Z deployment "my-app" successfully rolled out
+2025-08-16T14:16:35.1768130Z 
+2025-08-16T14:16:35.1829978Z ##[section]Finishing: Verify Rollout
+2025-08-16T14:16:35.1853999Z ##[section]Starting: Finalize Job
+2025-08-16T14:16:35.1869089Z Cleaning up task key
+2025-08-16T14:16:35.1869961Z Start cleaning up orphan processes.
+2025-08-16T14:16:35.2123639Z ##[section]Finishing: Finalize Job
+2025-08-16T14:16:35.2148276Z ##[section]Finishing: Production Deployment

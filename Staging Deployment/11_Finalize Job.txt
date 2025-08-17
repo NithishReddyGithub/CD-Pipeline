@@ -1,0 +1,4 @@
+2025-08-16T14:15:57.6986793Z ##[section]Starting: Finalize Job
+2025-08-16T14:15:57.7000992Z Cleaning up task key
+2025-08-16T14:15:57.7001832Z Start cleaning up orphan processes.
+2025-08-16T14:15:57.7263480Z ##[section]Finishing: Finalize Job

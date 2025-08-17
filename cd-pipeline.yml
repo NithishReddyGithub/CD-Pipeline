@@ -1,0 +1,164 @@
+trigger: none  # No automatic trigger, linked via CI pipeline
+
+resources:
+  pipelines:
+    - pipeline: ci
+      source: "Technical Assessment - ABB"
+      trigger: true
+
+pool:
+  name: linux-pool
+  demands: Agent.Name -equals nithish
+
+stages:
+# ------------------------
+# Stage 1 — Deploy to Staging
+# ------------------------
+- stage: Deploy_Staging
+  displayName: "Deploy to Staging AKS"
+  jobs:
+    - deployment: staging_deploy
+      displayName: "Staging Deployment"
+      environment: staging
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              # Download artifact from CI pipeline
+              - download: ci
+                artifact: drop
+
+              - task: AzureCLI@2
+                displayName: "Authenticate with AKS"
+                inputs:
+                  azureSubscription: 'nithish-aks'
+                  scriptType: 'bash'
+                  scriptLocation: 'inlineScript'
+                  inlineScript: |
+                    az aks get-credentials \
+                      --resource-group nithish-aks-rg \
+                      --name nithish-aks-aks \
+                      --overwrite-existing
+
+              # Ensure namespace exists
+              - script: |
+                  kubectl get ns staging || kubectl create ns staging
+                displayName: "Create namespace if not exists"
+                # env:
+                #   KUBECONFIG: $(KUBECONFIG)
+
+              # Create/Update ConfigMap
+              # - script: |
+              #     kubectl -n staging create configmap app-config \
+              #       --from-file=configs/staging/ \
+              #       --dry-run=client -o yaml | kubectl apply -f -
+              #   displayName: "Apply ConfigMap"
+              - script: |
+                  if [ -d configs/staging ]; then
+                    kubectl -n staging create configmap app-config \
+                      --from-file=configs/staging/ \
+                      --dry-run=client -o yaml | kubectl apply -f -
+                  else
+                    echo "No staging config files found, skipping ConfigMap."
+                  fi
+                  echo $(Pipeline.Workspace)
+                displayName: "Apply ConfigMap"
+
+              - checkout: self
+                persistCredentials: true
+                clean: true
+
+              # copy manifests
+              - script: |
+                  echo "copying manifests from repo"
+                  # mkdir -p manifest-files
+                  ls -R $(Build.SourcesDirectory)/manifests/
+                  # ls -R manifest-files
+
+              # Deploy to AKS
+              - task: Kubernetes@1
+                displayName: "Deploy to Staging AKS"
+                inputs:
+                  connectionType: 'Azure Resource Manager'
+                  azureSubscriptionEndpoint: 'nithish-aks'
+                  azureResourceGroup: 'nithish-aks-rg'
+                  kubernetesCluster: 'nithish-aks-aks'
+                  namespace: 'staging'
+                  command: apply
+                  useConfigurationFile: true
+                  # configuration: manifests/staging-deployment.yaml  # Ensure this path exists in artifact
+                  configuration: $(Build.SourcesDirectory)/manifests/staging-deployment.yaml
+
+              # Verify rollout
+              - script: |
+                  kubectl -n staging rollout status deployment/my-app --timeout=60s
+                displayName: "Verify Rollout"
+
+# ------------------------
+# Stage 2 — Deploy to Production
+# ------------------------
+- stage: Deploy_Production
+  displayName: "Deploy to Production AKS"
+  dependsOn: Deploy_Staging
+  condition: succeeded()
+  jobs:
+    - deployment: production_deploy
+      displayName: "Production Deployment"
+      environment: production
+      strategy:
+        runOnce:
+          deploy:
+            steps:
+              - download: ci
+                artifact: drop
+
+              - task: AzureCLI@2
+                displayName: "Authenticate with AKS"
+                inputs:
+                  azureSubscription: 'nithish-aks'
+                  scriptType: 'bash'
+                  scriptLocation: 'inlineScript'
+                  inlineScript: |
+                    az aks get-credentials \
+                      --resource-group nithish-aks-rg \
+                      --name nithish-aks-aks \
+                      --overwrite-existing
+
+              # Ensure namespace exists
+              - script: |
+                  kubectl get ns production || kubectl create ns production
+                displayName: "Create namespace if not exists"
+
+              # Create/Update ConfigMap
+              # - script: |
+              #     kubectl -n production create configmap app-config \
+              #       --from-file=configs/production/ \
+              #       --dry-run=client -o yaml | kubectl apply -f -
+              #   displayName: "Apply ConfigMap"
+              - script: |
+                  if [ -d configs/staging ]; then
+                    kubectl -n staging create configmap app-config \
+                      --from-file=configs/staging/ \
+                      --dry-run=client -o yaml | kubectl apply -f -
+                  else
+                    echo "No staging config files found, skipping ConfigMap."
+                  fi
+                displayName: "Apply ConfigMap"
+
+              # Deploy to AKS
+              - task: Kubernetes@1
+                displayName: "Deploy to Production AKS"
+                inputs:
+                  connectionType: 'Azure Resource Manager'
+                  azureSubscriptionEndpoint: 'nithish-aks'
+                  azureResourceGroup: 'nithish-aks-rg'
+                  kubernetesCluster: 'nithish-aks-aks'
+                  namespace: 'production'
+                  command: apply
+                  useConfigurationFile: true
+                  configuration: $(Build.SourcesDirectory)/manifests/production-deployment.yaml  # Ensure this path exists in artifact
+
+              # Verify rollout
+              - script: |
+                  kubectl -n production rollout status deployment/my-app --timeout=60s
+                displayName: "Verify Rollout"

@@ -1,0 +1,54 @@
+2025-08-16T14:15:44.9488329Z ##[section]Starting: Authenticate with AKS
+2025-08-16T14:15:44.9505928Z ==============================================================================
+2025-08-16T14:15:44.9506440Z Task         : Azure CLI
+2025-08-16T14:15:44.9506690Z Description  : Run Azure CLI commands against an Azure subscription in a PowerShell Core/Shell script when running on Linux agent or PowerShell/PowerShell Core/Batch script when running on Windows agent.
+2025-08-16T14:15:44.9507395Z Version      : 2.259.1
+2025-08-16T14:15:44.9507671Z Author       : Microsoft Corporation
+2025-08-16T14:15:44.9507968Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/deploy/azure-cli
+2025-08-16T14:15:44.9508354Z ==============================================================================
+2025-08-16T14:15:45.4006213Z [command]/usr/bin/az --version
+2025-08-16T14:15:46.4900596Z WARNING: You have 2 update(s) available. Consider updating your CLI installation with 'az upgrade'
+2025-08-16T14:15:46.4901129Z azure-cli                         2.72.0 *
+2025-08-16T14:15:46.4902116Z 
+2025-08-16T14:15:46.4903707Z core                              2.72.0 *
+2025-08-16T14:15:46.4904182Z telemetry                          1.1.0
+2025-08-16T14:15:46.4904502Z 
+2025-08-16T14:15:46.5021901Z Dependencies:
+2025-08-16T14:15:46.5022355Z msal                              1.32.3
+2025-08-16T14:15:46.5022622Z azure-mgmt-resource               23.1.1
+2025-08-16T14:15:46.5022749Z 
+2025-08-16T14:15:46.5022994Z Python location '/opt/az/bin/python3'
+2025-08-16T14:15:46.5023255Z Config directory '/home/nithish/.azure'
+2025-08-16T14:15:46.5023543Z Extensions directory '/home/nithish/.azure/cliextensions'
+2025-08-16T14:15:46.5023685Z 
+2025-08-16T14:15:46.5024066Z Python (Linux) 3.12.8 (main, Apr 28 2025, 09:24:09) [GCC 9.4.0]
+2025-08-16T14:15:46.5024318Z 
+2025-08-16T14:15:46.5024551Z Legal docs and information: aka.ms/AzureCliLegal
+2025-08-16T14:15:46.5024655Z 
+2025-08-16T14:15:46.5024745Z 
+2025-08-16T14:15:46.5027983Z Setting AZURE_CONFIG_DIR env variable to: /home/nithish/myagent/_temp/.azclitask
+2025-08-16T14:15:46.5029046Z Setting active cloud to: AzureCloud
+2025-08-16T14:15:46.5034840Z [command]/usr/bin/az cloud set -n AzureCloud
+2025-08-16T14:15:49.6636808Z [command]/usr/bin/az login --service-principal -u *** --tenant 43479cab-e51a-4a2a-8e3f-f636af78c0ac --allow-no-subscriptions --federated-token ***
+2025-08-16T14:15:50.8253870Z [
+2025-08-16T14:15:50.8255140Z   {
+2025-08-16T14:15:50.8255341Z     "cloudName": "AzureCloud",
+2025-08-16T14:15:50.8255658Z     "homeTenantId": "43479cab-e51a-4a2a-8e3f-f636af78c0ac",
+2025-08-16T14:15:50.8255991Z     "id": "c4c0a9c0-532c-47f2-ba91-33d673835ff4",
+2025-08-16T14:15:50.8256270Z     "isDefault": true,
+2025-08-16T14:15:50.8256521Z     "managedByTenants": [],
+2025-08-16T14:15:50.8256841Z     "name": "Azure subscription 1",
+2025-08-16T14:15:50.8257046Z     "state": "Enabled",
+2025-08-16T14:15:50.8257323Z     "tenantId": "43479cab-e51a-4a2a-8e3f-f636af78c0ac",
+2025-08-16T14:15:50.8257714Z     "user": {
+2025-08-16T14:15:50.8258215Z       "name": "***",
+2025-08-16T14:15:50.8258573Z       "type": "servicePrincipal"
+2025-08-16T14:15:50.8258770Z     }
+2025-08-16T14:15:50.8259025Z   }
+2025-08-16T14:15:50.8259308Z ]
+2025-08-16T14:15:50.8263390Z [command]/usr/bin/az account set --subscription c4c0a9c0-532c-47f2-ba91-33d673835ff4
+2025-08-16T14:15:51.2738097Z [command]/usr/bin/bash /home/nithish/myagent/_temp/azureclitaskscript1755353745395.sh
+2025-08-16T14:15:52.3623514Z WARNING: Merged "nithish-aks-aks" as current context in /home/nithish/.kube/config
+2025-08-16T14:15:52.5261808Z 
+2025-08-16T14:15:52.5314309Z [command]/usr/bin/az account clear
+2025-08-16T14:15:53.3073304Z ##[section]Finishing: Authenticate with AKS

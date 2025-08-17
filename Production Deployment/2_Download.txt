@@ -1,0 +1,33 @@
+2025-08-16T14:16:21.4859111Z ##[section]Starting: Download
+2025-08-16T14:16:21.4963568Z ==============================================================================
+2025-08-16T14:16:21.4964405Z Task         : Download pipeline artifact
+2025-08-16T14:16:21.4964817Z Description  : Download a named artifact from a pipeline to a local path
+2025-08-16T14:16:21.4965025Z Version      : 1.230.0
+2025-08-16T14:16:21.4965285Z Author       : Microsoft Corporation
+2025-08-16T14:16:21.4965977Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/download-pipeline-artifact
+2025-08-16T14:16:21.4966193Z ==============================================================================
+2025-08-16T14:16:21.8434167Z Download from the specified build: #29
+2025-08-16T14:16:21.8583115Z Download artifact to: /home/nithish/myagent/3/ci/drop
+2025-08-16T14:16:22.2739183Z Using default max parallelism.
+2025-08-16T14:16:22.2755683Z Max dedup parallelism: 192
+2025-08-16T14:16:22.2756615Z DomainId: 0
+2025-08-16T14:16:22.3636288Z ApplicationInsightsTelemetrySender will correlate events with X-TFS-Session 50ece42b-7f5e-452f-a711-f0eaae8440b1
+2025-08-16T14:16:22.3741090Z Hashtype: Dedup1024K
+2025-08-16T14:16:22.4041807Z DedupManifestArtifactClient will correlate http requests with X-TFS-Session 50ece42b-7f5e-452f-a711-f0eaae8440b1
+2025-08-16T14:16:22.4042791Z Minimatch patterns: [**]
+2025-08-16T14:16:22.5287071Z Filtered 1 files from the Minimatch filters supplied.
+2025-08-16T14:16:22.5333641Z Downloaded 0.0 MB out of 0.0 MB (0%).
+2025-08-16T14:16:22.6076281Z Downloaded 0.0 MB out of 0.0 MB (100%).
+2025-08-16T14:16:22.6076721Z 
+2025-08-16T14:16:22.6077266Z Download statistics:
+2025-08-16T14:16:22.6077865Z Total Content: 0.0 MB
+2025-08-16T14:16:22.6078547Z Physical Content Downloaded: 0.0 MB
+2025-08-16T14:16:22.6079179Z Compression Saved: 0.0 MB
+2025-08-16T14:16:22.6079837Z Local Caching Saved: 0.0 MB
+2025-08-16T14:16:22.6080447Z Chunks Downloaded: 1
+2025-08-16T14:16:22.6081024Z Nodes Downloaded: 0
+2025-08-16T14:16:22.6081280Z 
+2025-08-16T14:16:22.6099410Z Download completed.
+2025-08-16T14:16:23.5065378Z ApplicationInsightsTelemetrySender correlated 2 events with X-TFS-Session 50ece42b-7f5e-452f-a711-f0eaae8440b1
+2025-08-16T14:16:23.5085919Z Downloading artifact finished.
+2025-08-16T14:16:23.5282605Z ##[section]Finishing: Download

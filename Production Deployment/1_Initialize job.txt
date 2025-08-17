@@ -1,0 +1,33 @@
+2025-08-16T14:16:21.1961914Z ##[section]Starting: Initialize job
+2025-08-16T14:16:21.1965039Z Agent name: 'nithish'
+2025-08-16T14:16:21.1965546Z Agent machine name: 'linux-vm'
+2025-08-16T14:16:21.1965798Z Current agent version: '4.260.0'
+2025-08-16T14:16:21.2924773Z Agent running as: 'nithish'
+2025-08-16T14:16:21.2970319Z Prepare build directory.
+2025-08-16T14:16:21.3269388Z Set build variables.
+2025-08-16T14:16:21.3286592Z Download all required tasks.
+2025-08-16T14:16:21.4147583Z Checking job knob settings.
+2025-08-16T14:16:21.4151083Z    Knob: DockerActionRetries = true Source: $(VSTSAGENT_DOCKER_ACTION_RETRIES) 
+2025-08-16T14:16:21.4152661Z    Knob: UseGitLongPaths = true Source: $(USE_GIT_LONG_PATHS) 
+2025-08-16T14:16:21.4154845Z    Knob: EnableIssueSourceValidation = true Source: $(ENABLE_ISSUE_SOURCE_VALIDATION) 
+2025-08-16T14:16:21.4155812Z    Knob: AgentEnablePipelineArtifactLargeChunkSize = true Source: $(AGENT_ENABLE_PIPELINEARTIFACT_LARGE_CHUNK_SIZE) 
+2025-08-16T14:16:21.4158550Z    Knob: ContinueAfterCancelProcessTreeKillAttempt = true Source: $(VSTSAGENT_CONTINUE_AFTER_CANCEL_PROCESSTREEKILL_ATTEMPT) 
+2025-08-16T14:16:21.4159393Z    Knob: ProcessHandlerSecureArguments = false Source: $(AZP_75787_ENABLE_NEW_LOGIC) 
+2025-08-16T14:16:21.4159921Z    Knob: ProcessHandlerSecureArguments = false Source: $(AZP_75787_ENABLE_NEW_LOGIC_LOG) 
+2025-08-16T14:16:21.4160461Z    Knob: ProcessHandlerTelemetry = true Source: $(AZP_75787_ENABLE_COLLECT) 
+2025-08-16T14:16:21.4161029Z    Knob: UseNewNodeHandlerTelemetry = True Source: $(DistributedTask.Agent.USENEWNODEHANDLERTELEMETRY) 
+2025-08-16T14:16:21.4161597Z    Knob: ProcessHandlerEnableNewLogic = true Source: $(AZP_75787_ENABLE_NEW_PH_LOGIC) 
+2025-08-16T14:16:21.4162413Z    Knob: EnableResourceMonitorDebugOutput = true Source: $(AZP_ENABLE_RESOURCE_MONITOR_DEBUG_OUTPUT) 
+2025-08-16T14:16:21.4163003Z    Knob: EnableResourceUtilizationWarnings = true Source: $(AZP_ENABLE_RESOURCE_UTILIZATION_WARNINGS) 
+2025-08-16T14:16:21.4163778Z    Knob: IgnoreVSTSTaskLib = true Source: $(AZP_AGENT_IGNORE_VSTSTASKLIB) 
+2025-08-16T14:16:21.4164339Z    Knob: FailJobWhenAgentDies = true Source: $(FAIL_JOB_WHEN_AGENT_DIES) 
+2025-08-16T14:16:21.4165015Z    Knob: CheckForTaskDeprecation = true Source: $(AZP_AGENT_CHECK_FOR_TASK_DEPRECATION) 
+2025-08-16T14:16:21.4165744Z    Knob: CheckIfTaskNodeRunnerIsDeprecated246 = True Source: $(DistributedTask.Agent.CheckIfTaskNodeRunnerIsDeprecated246) 
+2025-08-16T14:16:21.4166812Z    Knob: LogTaskNameInUserAgent = true Source: $(AZP_AGENT_LOG_TASKNAME_IN_USERAGENT) 
+2025-08-16T14:16:21.4167347Z    Knob: UseFetchFilterInCheckoutTask = true Source: $(AGENT_USE_FETCH_FILTER_IN_CHECKOUT_TASK) 
+2025-08-16T14:16:21.4167995Z    Knob: Rosetta2Warning = true Source: $(ROSETTA2_WARNING) 
+2025-08-16T14:16:21.4169511Z    Knob: UseSparseCheckoutInCheckoutTask = true Source: $(AGENT_USE_SPARSE_CHECKOUT_IN_CHECKOUT_TASK) 
+2025-08-16T14:16:21.4170512Z    Knob: AgentCDNConnectivityFailWarning = False Source: $(DistributedTask.Agent.AgentCDNConnectivityFailWarning) 
+2025-08-16T14:16:21.4170837Z Finished checking job knob settings.
+2025-08-16T14:16:21.4498218Z Start tracking orphan processes.
+2025-08-16T14:16:21.4642876Z ##[section]Finishing: Initialize job

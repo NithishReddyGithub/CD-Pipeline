@@ -1,0 +1,23 @@
+{
+  "name": "simple-node-ci-demo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A minimal Express app with Jest tests and Azure DevOps pipeline.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "jest --ci --reporters=default --reporters=jest-junit"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0",
+    "jest-junit": "^16.0.0"
+  },
+  "jest-junit": {
+    "outputDirectory": "./test-results",
+    "outputName": "junit.xml"
+  }
+}

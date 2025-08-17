@@ -1,0 +1,17 @@
+2025-08-16T14:16:31.8398645Z ##[section]Starting: Create namespace if not exists
+2025-08-16T14:16:31.8404406Z ==============================================================================
+2025-08-16T14:16:31.8404536Z Task         : Command line
+2025-08-16T14:16:31.8404623Z Description  : Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
+2025-08-16T14:16:31.8404732Z Version      : 2.250.1
+2025-08-16T14:16:31.8404803Z Author       : Microsoft Corporation
+2025-08-16T14:16:31.8404909Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/command-line
+2025-08-16T14:16:31.8405013Z ==============================================================================
+2025-08-16T14:16:32.1179956Z Generating script.
+2025-08-16T14:16:32.1186642Z Script contents:
+2025-08-16T14:16:32.1186869Z kubectl get ns production || kubectl create ns production
+2025-08-16T14:16:32.1187104Z ========================== Starting Command Output ===========================
+2025-08-16T14:16:32.1240076Z [command]/usr/bin/bash --noprofile --norc /home/nithish/myagent/_temp/8825647e-5041-4ba5-aa51-5096424406e3.sh
+2025-08-16T14:16:32.3303958Z NAME         STATUS   AGE
+2025-08-16T14:16:32.3306004Z production   Active   6m24s
+2025-08-16T14:16:32.3339250Z 
+2025-08-16T14:16:32.3386986Z ##[section]Finishing: Create namespace if not exists

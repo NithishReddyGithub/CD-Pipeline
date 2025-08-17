@@ -1,0 +1,117 @@
+2025-08-16T14:15:54.7963639Z ##[section]Starting: Deploy to Staging AKS
+2025-08-16T14:15:54.7970593Z ==============================================================================
+2025-08-16T14:15:54.7970722Z Task         : Kubectl
+2025-08-16T14:15:54.7970811Z Description  : Deploy, configure, update a Kubernetes cluster in Azure Container Service by running kubectl commands
+2025-08-16T14:15:54.7970948Z Version      : 1.259.3
+2025-08-16T14:15:54.7971033Z Author       : Microsoft Corporation
+2025-08-16T14:15:54.7971126Z Help         : https://aka.ms/azpipes-kubectl-tsg
+2025-08-16T14:15:54.7971225Z ==============================================================================
+2025-08-16T14:15:56.2033622Z Prepending PATH environment variable with directory: /usr/bin
+2025-08-16T14:15:56.3360703Z ==============================================================================
+2025-08-16T14:15:56.3361456Z 			Kubectl Client Version: v1.33.3
+2025-08-16T14:15:56.3361847Z 			Kubectl Server Version: v1.32.6
+2025-08-16T14:15:56.3362208Z ==============================================================================
+2025-08-16T14:15:56.3816033Z [command]/usr/bin/kubectl apply -n staging -f /home/nithish/myagent/3/s/manifests/staging-deployment.yaml -o json
+2025-08-16T14:15:56.6692305Z {
+2025-08-16T14:15:56.6692568Z     "apiVersion": "apps/v1",
+2025-08-16T14:15:56.6692771Z     "kind": "Deployment",
+2025-08-16T14:15:56.6692952Z     "metadata": {
+2025-08-16T14:15:56.6693118Z         "annotations": {
+2025-08-16T14:15:56.6693355Z             "deployment.kubernetes.io/revision": "1",
+2025-08-16T14:15:56.6693955Z             "kubectl.kubernetes.io/last-applied-configuration": "{\"apiVersion\":\"apps/v1\",\"kind\":\"Deployment\",\"metadata\":{\"annotations\":{},\"name\":\"my-app\",\"namespace\":\"staging\"},\"spec\":{\"replicas\":1,\"selector\":{\"matchLabels\":{\"app\":\"my-app\"}},\"template\":{\"metadata\":{\"labels\":{\"app\":\"my-app\"}},\"spec\":{\"containers\":[{\"image\":\"nithishacrm3wx2.azurecr.io/my-app:v1\",\"imagePullPolicy\":\"IfNotPresent\",\"name\":\"my-app\",\"ports\":[{\"containerPort\":3000}]}],\"imagePullSecrets\":[{\"name\":\"acr-staging\"}],\"tolerations\":[{\"effect\":\"NoSchedule\",\"key\":\"CriticalAddonsOnly\",\"operator\":\"Exists\"}]}}}}\n"
+2025-08-16T14:15:56.6694563Z         },
+2025-08-16T14:15:56.6694761Z         "creationTimestamp": "2025-08-16T14:09:31Z",
+2025-08-16T14:15:56.6694955Z         "generation": 1,
+2025-08-16T14:15:56.6695139Z         "name": "my-app",
+2025-08-16T14:15:56.6695309Z         "namespace": "staging",
+2025-08-16T14:15:56.6695845Z         "resourceVersion": "899671",
+2025-08-16T14:15:56.6696045Z         "uid": "12f53b30-1c08-470a-a138-98c33d454f91"
+2025-08-16T14:15:56.6696221Z     },
+2025-08-16T14:15:56.6696485Z     "spec": {
+2025-08-16T14:15:56.6696658Z         "progressDeadlineSeconds": 600,
+2025-08-16T14:15:56.6696838Z         "replicas": 1,
+2025-08-16T14:15:56.6697008Z         "revisionHistoryLimit": 10,
+2025-08-16T14:15:56.6697192Z         "selector": {
+2025-08-16T14:15:56.6697357Z             "matchLabels": {
+2025-08-16T14:15:56.6697705Z                 "app": "my-app"
+2025-08-16T14:15:56.6697857Z             }
+2025-08-16T14:15:56.6698001Z         },
+2025-08-16T14:15:56.6698154Z         "strategy": {
+2025-08-16T14:15:56.6698329Z             "rollingUpdate": {
+2025-08-16T14:15:56.6698494Z                 "maxSurge": "25%",
+2025-08-16T14:15:56.6698663Z                 "maxUnavailable": "25%"
+2025-08-16T14:15:56.6698822Z             },
+2025-08-16T14:15:56.6698990Z             "type": "RollingUpdate"
+2025-08-16T14:15:56.6699165Z         },
+2025-08-16T14:15:56.6699317Z         "template": {
+2025-08-16T14:15:56.6699475Z             "metadata": {
+2025-08-16T14:15:56.6699653Z                 "creationTimestamp": null,
+2025-08-16T14:15:56.6699822Z                 "labels": {
+2025-08-16T14:15:56.6699991Z                     "app": "my-app"
+2025-08-16T14:15:56.6700145Z                 }
+2025-08-16T14:15:56.6700289Z             },
+2025-08-16T14:15:56.6700438Z             "spec": {
+2025-08-16T14:15:56.6700594Z                 "containers": [
+2025-08-16T14:15:56.6700931Z                     {
+2025-08-16T14:15:56.6701214Z                         "image": "nithishacrm3wx2.azurecr.io/my-app:v1",
+2025-08-16T14:15:56.6701426Z                         "imagePullPolicy": "IfNotPresent",
+2025-08-16T14:15:56.6701612Z                         "name": "my-app",
+2025-08-16T14:15:56.6701777Z                         "ports": [
+2025-08-16T14:15:56.6701929Z                             {
+2025-08-16T14:15:56.6702111Z                                 "containerPort": 3000,
+2025-08-16T14:15:56.6702289Z                                 "protocol": "TCP"
+2025-08-16T14:15:56.6702446Z                             }
+2025-08-16T14:15:56.6702594Z                         ],
+2025-08-16T14:15:56.6702750Z                         "resources": {},
+2025-08-16T14:15:56.6702959Z                         "terminationMessagePath": "/dev/termination-log",
+2025-08-16T14:15:56.6703168Z                         "terminationMessagePolicy": "File"
+2025-08-16T14:15:56.6703338Z                     }
+2025-08-16T14:15:56.6703487Z                 ],
+2025-08-16T14:15:56.6703656Z                 "dnsPolicy": "ClusterFirst",
+2025-08-16T14:15:56.6703847Z                 "imagePullSecrets": [
+2025-08-16T14:15:56.6704004Z                     {
+2025-08-16T14:15:56.6704168Z                         "name": "acr-staging"
+2025-08-16T14:15:56.6704325Z                     }
+2025-08-16T14:15:56.6704468Z                 ],
+2025-08-16T14:15:56.6704654Z                 "restartPolicy": "Always",
+2025-08-16T14:15:56.6704846Z                 "schedulerName": "default-scheduler",
+2025-08-16T14:15:56.6705032Z                 "securityContext": {},
+2025-08-16T14:15:56.6705219Z                 "terminationGracePeriodSeconds": 30,
+2025-08-16T14:15:56.6705515Z                 "tolerations": [
+2025-08-16T14:15:56.6705669Z                     {
+2025-08-16T14:15:56.6705833Z                         "effect": "NoSchedule",
+2025-08-16T14:15:56.6706016Z                         "key": "CriticalAddonsOnly",
+2025-08-16T14:15:56.6706198Z                         "operator": "Exists"
+2025-08-16T14:15:56.6706373Z                     }
+2025-08-16T14:15:56.6706519Z                 ]
+2025-08-16T14:15:56.6706663Z             }
+2025-08-16T14:15:56.6706812Z         }
+2025-08-16T14:15:56.6706954Z     },
+2025-08-16T14:15:56.6707106Z     "status": {
+2025-08-16T14:15:56.6707286Z         "availableReplicas": 1,
+2025-08-16T14:15:56.6707456Z         "conditions": [
+2025-08-16T14:15:56.6707606Z             {
+2025-08-16T14:15:56.6707886Z                 "lastTransitionTime": "2025-08-16T14:09:33Z",
+2025-08-16T14:15:56.6708103Z                 "lastUpdateTime": "2025-08-16T14:09:33Z",
+2025-08-16T14:15:56.6708337Z                 "message": "Deployment has minimum availability.",
+2025-08-16T14:15:56.6708544Z                 "reason": "MinimumReplicasAvailable",
+2025-08-16T14:15:56.6708723Z                 "status": "True",
+2025-08-16T14:15:56.6708892Z                 "type": "Available"
+2025-08-16T14:15:56.6709049Z             },
+2025-08-16T14:15:56.6709217Z             {
+2025-08-16T14:15:56.6709401Z                 "lastTransitionTime": "2025-08-16T14:09:31Z",
+2025-08-16T14:15:56.6709616Z                 "lastUpdateTime": "2025-08-16T14:09:33Z",
+2025-08-16T14:15:56.6709848Z                 "message": "ReplicaSet \"my-app-5b4d7b78cd\" has successfully progressed.",
+2025-08-16T14:15:56.6710073Z                 "reason": "NewReplicaSetAvailable",
+2025-08-16T14:15:56.6710264Z                 "status": "True",
+2025-08-16T14:15:56.6710436Z                 "type": "Progressing"
+2025-08-16T14:15:56.6710594Z             }
+2025-08-16T14:15:56.6710737Z         ],
+2025-08-16T14:15:56.6710899Z         "observedGeneration": 1,
+2025-08-16T14:15:56.6711087Z         "readyReplicas": 1,
+2025-08-16T14:15:56.6711251Z         "replicas": 1,
+2025-08-16T14:15:56.6711416Z         "updatedReplicas": 1
+2025-08-16T14:15:56.6711572Z     }
+2025-08-16T14:15:56.6711710Z }
+2025-08-16T14:15:56.6779058Z 
+2025-08-16T14:15:56.9932816Z ##[section]Finishing: Deploy to Staging AKS

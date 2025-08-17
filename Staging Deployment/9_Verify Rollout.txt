@@ -1,0 +1,16 @@
+2025-08-16T14:15:56.9956321Z ##[section]Starting: Verify Rollout
+2025-08-16T14:15:56.9962231Z ==============================================================================
+2025-08-16T14:15:56.9962395Z Task         : Command line
+2025-08-16T14:15:56.9962466Z Description  : Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
+2025-08-16T14:15:56.9962610Z Version      : 2.250.1
+2025-08-16T14:15:56.9962680Z Author       : Microsoft Corporation
+2025-08-16T14:15:56.9962790Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/command-line
+2025-08-16T14:15:56.9962916Z ==============================================================================
+2025-08-16T14:15:57.1465421Z Generating script.
+2025-08-16T14:15:57.1476473Z Script contents:
+2025-08-16T14:15:57.1477074Z kubectl -n staging rollout status deployment/my-app --timeout=60s
+2025-08-16T14:15:57.1477439Z ========================== Starting Command Output ===========================
+2025-08-16T14:15:57.1494142Z [command]/usr/bin/bash --noprofile --norc /home/nithish/myagent/_temp/aa03c176-d850-4be8-ab47-532279f77a40.sh
+2025-08-16T14:15:57.3075559Z deployment "my-app" successfully rolled out
+2025-08-16T14:15:57.3119979Z 
+2025-08-16T14:15:57.3201224Z ##[section]Finishing: Verify Rollout
