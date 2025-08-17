@@ -94,7 +94,8 @@ This pipeline consumes artifacts from the CI pipeline:
 - The complete **deployment logs** are available in this repository.  
 - File: **`deployment-logs.txt`** or similar.  
 - Repo URL (to be updated by you):  
-  👉 [View Deployment Logs](YOUR_REPO_URL_HERE)  
+  👉 [View Staging Deployment Logs]([YOUR_REPO_URL_HERE](https://github.com/NithishReddyGithub/CD-Pipeline/blob/main/Staging%20Deployment.txt))
+  👉 [View Production Deployment Logs]([YOUR_REPO_URL_HERE](https://github.com/NithishReddyGithub/CD-Pipeline/blob/main/Production%20Deployment.txt))  
 
 ---
 
